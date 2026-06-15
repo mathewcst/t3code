@@ -4842,9 +4842,9 @@ export default function ChatView(props: ChatViewProps) {
             activeProject ? (
             <Suspense fallback={null}>
               <FilePreviewPanel
-                key={`${activeProject.environmentId}:${activeProject.cwd}`}
+                key={`${activeProject.environmentId}:${gitCwd ?? activeProject.cwd}`}
                 environmentId={activeProject.environmentId}
-                cwd={activeProject.cwd}
+                cwd={gitCwd ?? activeProject.cwd}
                 projectName={activeProject.name}
                 relativePath={
                   activeRightPanelSurface.kind === "file"
@@ -4928,9 +4928,9 @@ export default function ChatView(props: ChatViewProps) {
               activeProject ? (
               <Suspense fallback={null}>
                 <FilePreviewPanel
-                  key={`${activeProject.environmentId}:${activeProject.cwd}`}
+                  key={`${activeProject.environmentId}:${gitCwd ?? activeProject.cwd}`}
                   environmentId={activeProject.environmentId}
-                  cwd={activeProject.cwd}
+                  cwd={gitCwd ?? activeProject.cwd}
                   projectName={activeProject.name}
                   relativePath={
                     activeRightPanelSurface.kind === "file"
